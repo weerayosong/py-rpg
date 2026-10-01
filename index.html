@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Covert Operations: Python RPG</title>
+        <link rel="stylesheet" href="style.css" />
+
+        <!-- ฟอนต์และไอคอน -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        />
+
+        <!-- PyScript -->
+        <link
+            rel="stylesheet"
+            href="https://pyscript.net/releases/2024.1.1/core.css"
+        />
+        <script
+            type="module"
+            src="https://pyscript.net/releases/2024.1.1/core.js"
+        ></script>
+    </head>
+    <body>
+        <!-- ฉากหลังสามารถใส่รูปภาพได้ที่คลาสนี้ใน CSS -->
+        <div class="game-container">
+            <header class="header">
+                <h1 class="title">Agent RPG // Python</h1>
+                <p class="subtitle">Mission: Eliminate the target</p>
+            </header>
+
+            <div class="arena">
+                <!-- Player Stats -->
+                <div class="character player">
+                    <div class="character-info">
+                        <h2>
+                            <i class="fa-solid fa-user-secret"></i> Agent 67
+                        </h2>
+                        <p id="player-hp-text" class="hp-text">100 / 100</p>
+                    </div>
+                    <div class="health-bar-bg">
+                        <div id="player-bar" class="health-bar hp-dark"></div>
+                    </div>
+                    <!-- จุดใส่ภาพ Game Asset ของ Player -->
+                    <img
+                        src="https://comicbook.com/wp-content/uploads/sites/4/2025/04/Spy-x-Family-Season-3-Loid.jpg?w=1024"
+                        alt="Player"
+                        class="character-sprite"
+                    />
+                </div>
+
+                <!-- VS -->
+                <div class="vs"><i class="fa-solid fa-bolt"></i></div>
+
+                <!-- Monster/Enemy Stats -->
+                <div class="character enemy">
+                    <div class="character-info">
+                        <h2>
+                            <i class="fa-solid fa-user-tie"></i>
+                            <i class="fa-solid fa-user-tie"></i> The Syndicate
+                        </h2>
+                        <p id="enemy-hp-text" class="hp-text">100 / 100</p>
+                    </div>
+                    <div class="health-bar-bg">
+                        <div id="enemy-bar" class="health-bar hp-red"></div>
+                    </div>
+                    <!-- จุดใส่ภาพ Game Asset ของ Enemy -->
+                    <img
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiMmgzBYoqlT5nHX7VTi5ogiVkHcBwje30OS5JHXwdVGxgiHRjPd7EVJVddIXzusjL9o7zFHIuHZGF8OTINdVD7NeVpiFzq7xzSIJ-cmgWVr8HRfgSnSS55C0O-QwGkNPHrZBv8aY03EAs/s1600/kuroi.jpg"
+                        alt="Enemy"
+                        class="character-sprite"
+                    />
+                </div>
+            </div>
+
+            <!-- Action Log -->
+            <div class="log-box">
+                <p id="game-log">
+                    <i class="fa-solid fa-satellite-dish"></i> Systems online.
+                    Awaiting your command.
+                </p>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button
+                    py-click="attack"
+                    id="btn-attack"
+                    class="btn btn-attack"
+                >
+                    <i class="fa-solid fa-crosshairs"></i> Strike
+                </button>
+                <button py-click="heal" id="btn-heal" class="btn btn-heal">
+                    <i class="fa-solid fa-medkit"></i> First Aid
+                </button>
+                <button
+                    py-click="reset_game"
+                    id="btn-reset"
+                    class="btn btn-reset hidden"
+                >
+                    <i class="fa-solid fa-rotate-right"></i> Restart Mission
+                </button>
+            </div>
+        </div>
+
+        <!-- ลิงก์ไฟล์ Python -->
+        <script type="py" src="script.py"></script>
+    </body>
+</html>

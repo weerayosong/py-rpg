@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background-color: #222;
+    color: #111827;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.game-container {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 800px;
+    border-top: 14px solid #dc2626;
+
+    /* รูปฉากหลัง นำลิงก์มาใส่ตรงนี้ได้เลย */
+    background-image: url("https://static.vecteezy.com/system/resources/previews/071/007/087/non_2x/a-clean-and-modern-abstract-white-background-with-geometric-shapes-perfect-for-banner-designs-vector.jpg");
+    background-size: cover;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: #111827;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+}
+
+.arena {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.character {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.character h2 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.character h2 i {
+    margin-right: 5px;
+    color: #4b5563;
+}
+
+.hp-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+/* หลอดเลือด */
+.health-bar-bg {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    margin-bottom: 1rem;
+}
+
+.health-bar {
+    height: 100%;
+    width: 100%;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hp-dark {
+    background: #111827;
+} /* เลือดเราสีดำ/เทาเข้ม */
+.hp-red {
+    background: #dc2626;
+} /* เลือดศัตรูสีแดง */
+
+/* รูปภาพตัวละคร (Game Assets) */
+.character-sprite {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+}
+
+.vs {
+    margin-top: 2rem;
+    font-size: 3rem;
+    color: #dc2626;
+}
+
+/* Log */
+.log-box {
+    background: #f9fafb;
+    padding: 0.5rem 1rem;
+    border-left: 3px solid #111827;
+    margin-bottom: 1rem;
+    min-height: 30px;
+    color: #374151;
+    font-size: 0.7rem;
+    line-height: 1.8;
+}
+
+.log-box i {
+    margin-right: 8px;
+    color: #6b7280;
+}
+
+/* ปุ่มกด */
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 5px 30px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+.btn-attack {
+    background: #dc2626;
+    color: white;
+}
+.btn-attack:hover {
+    background: #b91c1c;
+}
+
+.btn-heal {
+    background: #ffffff;
+    color: #111827;
+    border-color: #d1d5db;
+}
+.btn-heal:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.btn-reset {
+    background: #111827;
+    color: white;
+}
+.btn-reset:hover {
+    background: #000000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* สร้างคลาสสำหรับใช้จัดสีข้อความใน Python */
+.text-red {
+    color: #dc2626;
+    font-weight: 600;
+}
+.text-dark {
+    color: #111827;
+    font-weight: 600;
+}
